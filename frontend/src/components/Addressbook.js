@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./Addressbook.css";
-
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 const AddressBook = () => {
+  const navigate = useNavigate();
   const [check, setcheck] = useState(false);
   const [state, setState] = useState({
     deliveryName: "",
@@ -18,6 +19,11 @@ const AddressBook = () => {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const onSubmitHandler = () => {
+    setState("");
+    navigate("/");
   };
 
   return (
@@ -95,7 +101,12 @@ const AddressBook = () => {
           placeholder="Phone"
           value={check ? state.deliveryPhone : ""}
         />
-        <input type="button" className="btn" value="Submit" />
+        <input
+          type="button"
+          className="btn"
+          onClick={onSubmitHandler}
+          value="Submit"
+        />
       </form>
     </div>
   );

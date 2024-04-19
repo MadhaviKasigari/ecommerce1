@@ -8,26 +8,7 @@ const getApiBaseUrl = () => {
   return apiUrl;
 };
 
-// export const addToOrderTrack = (id, qty) => async (dispatch, getState) => {
-//   const { data } = await axios.get(`${getApiBaseUrl()}/${id}`);
-//   console.log(data);
 
-//   dispatch({
-//     type: actionTypes.ADD_TO_ORDERTRACK,
-//     payload: {
-//       product: data._id,
-//       name: data.name,
-//       img: data.img,
-//       price: data.price,
-//       countInStock: data.countInStock,
-//       qty,
-//     },
-//   });
-//   localStorage.setItem(
-//     "ordertrack",
-//     JSON.stringify(getState().ordertrack.ordertrackItems)
-//   );
-// };
 
 export const addToOrderTrack = (productId) => async (dispatch, getState) => {
   try {

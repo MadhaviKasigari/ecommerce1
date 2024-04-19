@@ -43,11 +43,6 @@ function App() {
             {/* <Route exact path="/payment" element={<Payment />} /> */}
             <Route exact path="/products/order" element={<OrderTrack />} />
             <Route exact path="/products/:id" element={<ProductScreen />} />
-            {/* <Route
-              exact
-              path="/:category/category"
-              // element={<CategoryItem />}
-            /> */}
             <Route exact path="/cart" element={<CartScreen />} />
           </Routes>
         </main>

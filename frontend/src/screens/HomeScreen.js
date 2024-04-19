@@ -18,14 +18,10 @@ import { useNavigate } from "react-router-dom";
 // import CategoryItem from "../components/categoryItem";
 
 const HomeScreen = ({
-  // catalog,
   categories,
   onSetFilter,
   onClearFilter,
   onAddToCart,
-  // products,
-  // loading,
-  // error,
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -47,8 +43,9 @@ const HomeScreen = ({
     navigate("/");
   };
 
-  const handleClearFilter = () => {
-    dispatch(clearFilter());
+  const handleClearFilter = (category) => {
+    dispatch(clearFilter(category));
+    navigate("/");
   };
 
   return (
@@ -68,14 +65,11 @@ const HomeScreen = ({
       </button>
       <button
         className="product-filters"
-        onClick={() => filterProduct("Home Appliances")}
+        onClick={() => filterProduct("Home Appliance")}
       >
         Home Appliances
       </button>
-      <button
-        className="product-filters clear-btn"
-        onClick={() => onClearFilter()}
-      >
+      <button className="product-filters clear-btn" onClick={handleClearFilter}>
         Clear Filter
       </button>
       <div className="homescreen_products">

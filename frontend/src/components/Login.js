@@ -10,8 +10,6 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  // const errors = useSelector((state) => state.errors);
-  // const { error } = useSelector(state => state.login.errors, shallowEqual);
   const errors = useSelector((state) => state?.login?.errors);
   const dispatch = useDispatch();
   const navigate = useNavigate();

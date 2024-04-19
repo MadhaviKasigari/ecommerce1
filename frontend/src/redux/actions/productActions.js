@@ -1,7 +1,5 @@
 import * as actionTypes from "../constants/productsConstants";
 import axios from "axios";
-// import { getCategories } from "../components/Product";
-// import { useParams } from "react-router-dom";
 
 // Define a function to get the API base URL including the API key
 const getApiBaseUrl = () => {
@@ -10,7 +8,7 @@ const getApiBaseUrl = () => {
   // Replace 'YOUR_API_KEY' with your actual API key parameter name in the API endpoint
   return apiUrl;
 };
-// const { id } = useParams();
+
 
 export const products = () => async (dispatch) => {
   try {

@@ -1,17 +1,3 @@
-// const categories = [
-//   {
-//     id: "dep01",
-//     title: "Electronics",
-//   },
-//   {
-//     id: "dep02",
-//     title: "Furniture",
-//   },
-//   {
-//     id: "dep03",
-//     title: "Home-Appliances",
-//   },
-// ];
 
 const products = [
   {
