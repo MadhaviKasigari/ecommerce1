@@ -22,7 +22,7 @@ export default function Login() {
       dispatch(signIn(email, password));
       setEmail("");
       setPassword("");
-      navigate("/");
+      navigate("/shop");
     }
   };
 

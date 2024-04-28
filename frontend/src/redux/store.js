@@ -1,21 +1,24 @@
-import { legacy_createStore, combineReducers, applyMiddleware } from "redux";
+import {
+  legacy_createStore as createStore,
+  combineReducers,
+  applyMiddleware,
+} from "redux";
 import { thunk } from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-// import storage from "redux-persist/lib/storage";
 
-//  Reducers
+// Reducers
 import { getcatalogReducer } from "./reducers/catalogReducers";
 import { cartReducer } from "./reducers/cartReducers";
 import { wishlistReducer } from "./reducers/wishlistReducers";
 import {
   getProductDetailsReducer,
   getProductsReducer,
-  // getProducts,
 } from "./reducers/productReducers";
 import { addToOrderTrackReducer } from "./reducers/ordertrackReducers";
 import { securityReducer } from "./reducers/securityReducers";
+// import {createLogger} from 'redux-logger';
 
-var allReducers = combineReducers({
+const allReducers = combineReducers({
   cart: cartReducer,
   products: getProductsReducer,
   productDetails: getProductDetailsReducer,
@@ -25,8 +28,6 @@ var allReducers = combineReducers({
   login: securityReducer,
 });
 
-const middleware = [{ thunk }];
-
 const categoryFromLocalStorage = localStorage.getItem("category")
   ? JSON.parse(localStorage.getItem("category"))
   : [];
@@ -35,10 +36,8 @@ const INITIAL_STATE = {
     categoryItems: categoryFromLocalStorage,
   },
 };
-const store = legacy_createStore(
-  allReducers,
-  INITIAL_STATE,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+
+// Apply thunk middleware directly
+const store = createStore(allReducers, INITIAL_STATE, applyMiddleware(thunk));
 
 export default store;

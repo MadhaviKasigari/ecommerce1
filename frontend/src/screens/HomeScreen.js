@@ -40,12 +40,10 @@ const HomeScreen = ({
   const filterProduct = (category) => {
     console.log(category);
     dispatch(setFilter(category));
-    navigate("/");
   };
 
   const handleClearFilter = (category) => {
     dispatch(clearFilter(category));
-    navigate("/");
   };
 
   return (

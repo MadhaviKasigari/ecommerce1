@@ -19,6 +19,7 @@ import Login from "./components/Login";
 import OrderTrack from "./components/OrderTrack";
 import { useDispatch } from "react-redux";
 import Signup from "./components/Signup";
+import ShopScreen from "./components/shopScreen";
 // import Payment from "./components/payment";
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
         <Navbar click={() => setSideToggle(!sideToggle)} />;
         <main>
           <Routes>
-            <Route exact path="/" element={<HomeScreen />} />
+            <Route exact path="/" element={<ShopScreen />} />
+            <Route exact path="/shop" element={<HomeScreen />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/addressbook" element={<AddressBook />} />
