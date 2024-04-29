@@ -38,7 +38,7 @@ const INITIAL_STATE = {
 const store = CreateStore(
   allReducers,
   INITIAL_STATE,
-  (applyMiddleware(thunk))
+  applyMiddleware(thunk)
 );
 
 export default store;
