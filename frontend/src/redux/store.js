@@ -1,8 +1,6 @@
-import {
-  legacy_createStore as createStore,
-  combineReducers,
-  applyMiddleware,
-} from "redux";
+
+import { legacy_createStore as createStore, combineReducers, applyMiddleware } from "redux";
+
 import { thunk } from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
@@ -28,6 +26,9 @@ const allReducers = combineReducers({
   login: securityReducer,
 });
 
+
+
+// const middleware = [{ thunk }];
 const categoryFromLocalStorage = localStorage.getItem("category")
   ? JSON.parse(localStorage.getItem("category"))
   : [];
@@ -37,7 +38,15 @@ const INITIAL_STATE = {
   },
 };
 
+
 // Apply thunk middleware directly
 const store = createStore(allReducers, INITIAL_STATE, applyMiddleware(thunk));
+
+const store = CreateStore(
+  allReducers,
+  INITIAL_STATE,
+  applyMiddleware(thunk)
+);
+
 
 export default store;
