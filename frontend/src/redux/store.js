@@ -42,11 +42,6 @@ const INITIAL_STATE = {
 // Apply thunk middleware directly
 const store = createStore(allReducers, INITIAL_STATE, applyMiddleware(thunk));
 
-const store = CreateStore(
-  allReducers,
-  INITIAL_STATE,
-  applyMiddleware(thunk)
-);
 
 
 export default store;
